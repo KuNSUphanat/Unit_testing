@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from '@jest/globals';
-import InputPage from 'src/pages/InputPage.vue';
+import InputPage from 'src/pages/IndexPage.vue';
 import { shallowMount } from '@vue/test-utils';
 
 test('should show the form element on the user output', () => {

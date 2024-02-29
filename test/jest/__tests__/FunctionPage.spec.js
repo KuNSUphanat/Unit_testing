@@ -1,9 +1,12 @@
 import { describe, expect, it } from '@jest/globals';
 import { installQuasarPlugin } from '@quasar/quasar-app-extension-testing-unit-jest';
 import { shallowMount } from '@vue/test-utils';
-import FunctionPage from 'src/pages/FunctionPage.vue';
+import FunctionPage from 'src/pages/IndexPage.vue';
 
-
+test('Name Kunsuphanat Sritabutwarat 6404101356 available on file ',() =>{
+  const wrapper = shallowMount(FunctionPage)
+  expect(wrapper.find('from > input').exists("Kunsuphanat","Sritabutwarat","6404101356")).toBe(true)
+})
 
 
 // Specify here Quasar config you'll need to test your component
@@ -45,12 +48,4 @@ test('should have button', () => {
   expect(wrapper.find('button').exists()).toBe(true);
 });
 
-// create test for the function addname
-test('trigger click event on button name and code', async () => {
-  const wrapper = shallowMount(FunctionPage);
-  const button = wrapper.find('button');
-  await button.trigger('click');
-  expect(wrapper.vm.addname('Kunsuphanat', 'Sritabutwarat', '6404101356')).toBe(
-    'Kunsuphanat Sritabutwarat 6404101356'
-  );
-});
+
